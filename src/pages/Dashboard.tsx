@@ -55,7 +55,11 @@ const Dashboard = () => {
               Discover winning ads, spy on competitors, and organize your creative inspiration.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-primary shadow-glow hover:shadow-elegant transition-all duration-300">
+              <Button 
+                size="lg" 
+                className="bg-gradient-primary shadow-glow hover:shadow-elegant transition-all duration-300"
+                onClick={() => navigate("/spyder")}
+              >
                 <Zap className="h-5 w-5 mr-2" />
                 Get API Access
               </Button>
@@ -113,7 +117,12 @@ const Dashboard = () => {
               </CardDescription>
             </CardHeader>
             <CardContent className="text-center">
-              <Button size="lg" variant="secondary" className="bg-white/20 text-primary-foreground border-white/30 hover:bg-white/30">
+              <Button 
+                size="lg" 
+                variant="secondary" 
+                className="bg-white/20 text-primary-foreground border-white/30 hover:bg-white/30"
+                onClick={() => navigate("/discovery")}
+              >
                 Start Free Trial
               </Button>
             </CardContent>

@@ -5,6 +5,10 @@ import { Badge } from "@/components/ui/badge";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Search, Filter, Star, PlayCircle, Heart, TrendingUp, Database, Globe } from "lucide-react";
 import { useState } from "react";
+import nikeAd from "@/assets/nike-ad.jpg";
+import iphoneAd from "@/assets/iphone-ad.jpg";
+import teslaAd from "@/assets/tesla-ad.jpg";
+import spotifyAd from "@/assets/spotify-ad.jpg";
 
 const Discovery = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -22,7 +26,7 @@ const Discovery = () => {
       saves: "8.2K",
       domain: "nike.com",
       category: "Sports & Fitness",
-      thumbnail: "🎥",
+      thumbnail: nikeAd,
       description: "Latest Air Max collection featuring revolutionary comfort technology"
     },
     {
@@ -35,7 +39,7 @@ const Discovery = () => {
       saves: "23.1K", 
       domain: "apple.com",
       category: "Technology",
-      thumbnail: "📱",
+      thumbnail: iphoneAd,
       description: "Introducing the most advanced iPhone with titanium design"
     },
     {
@@ -48,7 +52,7 @@ const Discovery = () => {
       saves: "12.7K",
       domain: "tesla.com", 
       category: "Automotive",
-      thumbnail: "🚗",
+      thumbnail: teslaAd,
       description: "Experience the future of electric vehicles with Model Y"
     },
     {
@@ -61,7 +65,7 @@ const Discovery = () => {
       saves: "15.4K",
       domain: "spotify.com",
       category: "Entertainment",
-      thumbnail: "🎵",
+      thumbnail: spotifyAd,
       description: "Unlimited music streaming with premium features"
     }
   ];
@@ -183,7 +187,13 @@ const Discovery = () => {
               <Card key={ad.id} className="group hover:shadow-elegant transition-all duration-300 hover:-translate-y-1 overflow-hidden">
                 <CardHeader className="pb-3">
                   <div className="flex items-start justify-between">
-                    <div className="text-4xl mb-2">{ad.thumbnail}</div>
+                    <div className="w-20 h-20 rounded-lg overflow-hidden mb-2">
+                      <img 
+                        src={ad.thumbnail} 
+                        alt={ad.title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
                     <Badge variant="outline">{ad.platform}</Badge>
                   </div>
                   <CardTitle className="text-lg line-clamp-2">{ad.title}</CardTitle>

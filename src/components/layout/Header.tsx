@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Search, Zap, Eye, FolderOpen, Menu } from "lucide-react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Header = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   
   const isActive = (path: string) => location.pathname === path;
   
@@ -43,10 +44,18 @@ const Header = () => {
         </nav>
 
         <div className="ml-auto flex items-center space-x-4">
-          <Button variant="outline" size="sm">
+          <Button 
+            variant="outline" 
+            size="sm"
+            onClick={() => window.open('https://docs.lovable.dev/', '_blank')}
+          >
             API Docs
           </Button>
-          <Button size="sm" className="bg-gradient-primary shadow-glow">
+          <Button 
+            size="sm" 
+            className="bg-gradient-primary shadow-glow"
+            onClick={() => navigate("/discovery")}
+          >
             Get Started
           </Button>
         </div>
